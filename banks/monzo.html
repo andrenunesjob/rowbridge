@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert Monzo CSV to QBO / QFX / OFX | Rowbridge</title>
+<meta name="description" content="Monzo exports transactions from the app as PDF, CSV, or QIF. There is no QBO or QFX option in that help article. Column names were listed by Monzo staff in 2020.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/banks/monzo.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert Monzo CSV to QBO / QFX / OFX | Rowbridge">
+<meta property="og:description" content="Monzo exports transactions from the app as PDF, CSV, or QIF. There is no QBO or QFX option in that help article. Column names were listed by Monzo staff in 2020.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/banks/monzo.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Convert Monzo CSV to QBO / QFX / OFX</h1>
+<p>Monzo's help article lists PDF, CSV, and QIF. It does not list QBO, QFX, or OFX. QIF does not import as Quicken Web Connect or as QuickBooks Desktop Web Connect. Use the CSV.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Export from the app</h2>
+<p><a href="https://monzo.com/help/budgeting-overdrafts-savings/exporting-my-transactions" rel="noopener">Exporting your transactions</a> says you can export all transactions, including Pots:</p>
+<ol>
+<li>Tap the three vertical dots on your card.</li>
+<li>Tap Bank statements.</li>
+<li>Choose the date range.</li>
+<li>Choose PDF, CSV, or QIF.</li>
+</ol>
+<h2>CSV columns</h2>
+<p>A Monzo staff reply on the <a href="https://community.monzo.com/t/csv-exports/89487/69" rel="noopener">CSV exports</a> community topic (10 March 2020) listed the fields in the export at that time:</p>
+<ul>
+<li>Transaction ID</li>
+<li>Date</li>
+<li>Time</li>
+<li>Type</li>
+<li>Name</li>
+<li>Emoji</li>
+<li>Category</li>
+<li>Amount</li>
+<li>Currency</li>
+<li>Local amount</li>
+<li>Local currency</li>
+<li>Notes and #tags</li>
+<li>Address</li>
+<li>Receipt</li>
+<li>Description</li>
+</ul>
+<p>That post said Name is the merchant, pot, or contact name, and Type is the payment scheme (card payment, direct debit, and so on). Map Date, Name or Description, and Amount. The post is from 2020. If your header row has extra columns, map the ones you have. Do not add columns that are not in the file.</p>
+<h2>Convert it</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop in the CSV or Excel file. Excel (.xlsx or .xls) is fine.</li>
+<li>If the bank put your name or account number above the table, set the header row to the row that names the columns.</li>
+<li>Map the date, the description, and either one signed amount or separate paid-in and paid-out columns. Confirm the dates in the preview, which shows them as YYYY-MM-DD.</li>
+<li>Choose QBO for QuickBooks Desktop, QFX for Quicken, or OFX, and download.</li>
+</ol>
+<h2>Import the converted file</h2>
+<ul>
+<li><a href="/rowbridge/to/quickbooks-online.html">QuickBooks Online</a></li>
+<li><a href="/rowbridge/to/quickbooks-desktop.html">QuickBooks Desktop</a> (needs a .qbo file)</li>
+<li><a href="/rowbridge/to/quicken.html">Quicken for Windows or Mac</a> (needs a .qfx file)</li>
+</ul>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Monzo offers QIF. Can Quicken open it?</summary><p>Quicken says QIF will not work with Web Connect. Export CSV and convert it to QFX.</p></details>
+<details><summary>Which description column should I use?</summary><p>The 2020 post describes Name as the readable merchant or payee, and Description as its own field. Prefer Name if both are present, and check the preview.</p></details>
+<details><summary>Are pot transfers included?</summary><p>Monzo says the export includes Pots. You may want to leave pot transfers out before you import them into bookkeeping, or categorize them as transfers after import.</p></details>
+</section>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://monzo.com/help/budgeting-overdrafts-savings/exporting-my-transactions" rel="noopener">Monzo Help, Exporting your transactions</a></li>
+<li><a href="https://community.monzo.com/t/csv-exports/89487/69" rel="noopener">Monzo Community, CSV exports (staff reply)</a></li>
+</ul>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

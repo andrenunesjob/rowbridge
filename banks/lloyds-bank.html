@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert Lloyds Bank CSV to QBO / QFX / OFX | Rowbridge</title>
+<meta name="description" content="Lloyds Online for Business exports transactions as CSV or QIF, not as a QuickBooks Web Connect file. Search history is up to 12 months or 3 months depending on the layout.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/banks/lloyds-bank.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert Lloyds Bank CSV to QBO / QFX / OFX | Rowbridge">
+<meta property="og:description" content="Lloyds Online for Business exports transactions as CSV or QIF, not as a QuickBooks Web Connect file. Search history is up to 12 months or 3 months depending on the layout.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/banks/lloyds-bank.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Convert Lloyds Bank CSV to QBO / QFX / OFX</h1>
+<p>These steps are from Lloyds Bank's help for Online for Business, the business service. They are not the personal mobile app. The export formats Lloyds names there are CSV and QIF. Quicken says a QIF file will not import as Web Connect, and QuickBooks Desktop will not import QIF either.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Export CSV or QIF</h2>
+<p><a href="https://www.lloydsbank.com/business/help-and-support/account-management/view-your-bank-statements.html" rel="noopener">View your bank statements</a> says Online for Business may show either a new layout or the previous one.</p>
+<p>If you see the new look:</p>
+<ol>
+<li>Log in to Online for Business.</li>
+<li>Select Statement options.</li>
+<li>Go to Export transactions (CSV, QIF).</li>
+</ol>
+<p>If you do not see the new look:</p>
+<ol>
+<li>Log in to Online for Business.</li>
+<li>Select View statement next to the account.</li>
+<li>Go to Statement options and Export transactions (CSV, QIF).</li>
+</ol>
+<p>Search limits on that page: with the new look, search by date, amount, or type going back up to 12 months. Without the new look, search by date, description, or type over a three-month period. Export the CSV, not the QIF, when you need QuickBooks or a current Quicken Web Connect import.</p>
+<h2>CSV columns</h2>
+<p>The source linked below does not publish the column headings in the file. After you download it, use the header row you actually see. In the converter, map a date, a description, and either one signed amount or separate money-in and money-out columns. The preview rewrites dates as YYYY-MM-DD so you can confirm the day and the month before you download.</p>
+<h2>Convert it</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop in the CSV or Excel file. Excel (.xlsx or .xls) is fine.</li>
+<li>If the bank put your name or account number above the table, set the header row to the row that names the columns.</li>
+<li>Map the date, the description, and either one signed amount or separate paid-in and paid-out columns. Confirm the dates in the preview, which shows them as YYYY-MM-DD.</li>
+<li>Choose QBO for QuickBooks Desktop, QFX for Quicken, or OFX, and download.</li>
+</ol>
+<h2>Import the converted file</h2>
+<ul>
+<li><a href="/rowbridge/to/quickbooks-online.html">QuickBooks Online</a></li>
+<li><a href="/rowbridge/to/quickbooks-desktop.html">QuickBooks Desktop</a> (needs a .qbo file)</li>
+<li><a href="/rowbridge/to/quicken.html">Quicken for Windows or Mac</a> (needs a .qfx file)</li>
+</ul>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Is QIF enough for Quicken?</summary><p>Quicken's Web Connect troubleshooting page says QIF files will not work with Web Connect. Convert the CSV to QFX. See <a href="/rowbridge/to/quicken.html">import a QFX file into Quicken</a>.</p></details>
+<details><summary>Does this apply to the Lloyds personal app?</summary><p>The steps above are the Online for Business article. Lloyds' personal app is not described there.</p></details>
+<details><summary>I can only search three months.</summary><p>That is the limit Lloyds states for statement search on the layout that is not the new look. The new look's search goes back up to 12 months.</p></details>
+</section>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.lloydsbank.com/business/help-and-support/account-management/view-your-bank-statements.html" rel="noopener">Lloyds Bank, View your bank statements (Online for Business)</a></li>
+</ul>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

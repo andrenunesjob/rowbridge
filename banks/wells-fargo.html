@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert Wells Fargo CSV to QBO / QFX / OFX | Rowbridge</title>
+<meta name="description" content="Wells Fargo&#x27;s comma-delimited download defaults to 90 days. Credit card history online is up to 90 days or 300 transactions. Convert the spreadsheet when you need QBO or QFX.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/banks/wells-fargo.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert Wells Fargo CSV to QBO / QFX / OFX | Rowbridge">
+<meta property="og:description" content="Wells Fargo&#x27;s comma-delimited download defaults to 90 days. Credit card history online is up to 90 days or 300 transactions. Convert the spreadsheet when you need QBO or QFX.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/banks/wells-fargo.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Convert Wells Fargo CSV to QBO / QFX / OFX</h1>
+<p>Wells Fargo documents a comma-delimited spreadsheet download and a shorter default window than many bookkeeping tasks need. Business online banking also offers QuickBooks Web Connect. When that file is missing, too short, or rejected, the spreadsheet is the file to convert.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Download a comma-delimited file</h2>
+<p><a href="https://www.wellsfargo.com/help/online-banking/activity-faqs/" rel="noopener">Account Activity Questions</a> says to sign on to Wells Fargo Online and:</p>
+<ol>
+<li>Choose the account.</li>
+<li>Open Download Account Activity under the Accounts tab and complete the required information.</li>
+<li>Confirm the From and To dates.</li>
+<li>Select Comma Delimited (ASCII, Spreadsheet).</li>
+<li>Select Download, then Save File. Save each account under a different file name.</li>
+</ol>
+<p>By default the download captures the last 90 days. For certain account types, up to 18 months may be available if you choose that time frame and then download.</p>
+<p>The same page says how much history you can view online:</p>
+<ul>
+<li>Checking, savings, and money market: up to 18 months.</li>
+<li>Line of credit and installment loans: up to 24 months.</li>
+<li>Credit cards: up to 90 days or 300 transactions.</li>
+</ul>
+<p>Older activity is on the account statement. Wells Fargo also points people who enrolled in online statements at those statements. This converter does not read PDFs.</p>
+<p>Wells Fargo's <a href="https://www.wellsfargo.com/biz/online-banking/software/quickbooks/webconnect/" rel="noopener">business QuickBooks Web Connect</a> page is a separate download: choose the account, set From and To, choose QuickBooks (Web Connect), and download. Use that when it covers the dates you need. Use the comma-delimited file when it does not.</p>
+<h2>CSV columns</h2>
+<p>The source linked below does not publish the column headings in the file. After you download it, use the header row you actually see. In the converter, map a date, a description, and either one signed amount or separate money-in and money-out columns. The preview rewrites dates as YYYY-MM-DD so you can confirm the day and the month before you download.</p>
+<h2>Convert it</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop in the CSV or Excel file. Excel (.xlsx or .xls) is fine.</li>
+<li>If the bank put your name or account number above the table, set the header row to the row that names the columns.</li>
+<li>Map the date, the description, and either one signed amount or separate paid-in and paid-out columns. Confirm the dates in the preview, which shows them as YYYY-MM-DD.</li>
+<li>Choose QBO for QuickBooks Desktop, QFX for Quicken, or OFX, and download.</li>
+</ol>
+<h2>Import the converted file</h2>
+<ul>
+<li><a href="/rowbridge/to/quickbooks-online.html">QuickBooks Online</a></li>
+<li><a href="/rowbridge/to/quickbooks-desktop.html">QuickBooks Desktop</a> (needs a .qbo file)</li>
+<li><a href="/rowbridge/to/quicken.html">Quicken for Windows or Mac</a> (needs a .qfx file)</li>
+</ul>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Why is my credit card file so short?</summary><p>Wells Fargo says credit card history online is up to 90 days or 300 transactions. The activity download defaults to 90 days unless you pick a longer range the account allows.</p></details>
+<details><summary>Does Wells Fargo offer Quicken Web Connect?</summary><p>The activity FAQ says you can download into a spreadsheet or Quicken Web Connect. The business page linked above is specifically QuickBooks Web Connect. Personal and business screens are not the same.</p></details>
+<details><summary>The spreadsheet opened as text, not Excel.</summary><p>Wells Fargo calls the format comma delimited (ASCII, spreadsheet). Open it from Excel with File, Open, or drop it straight into the converter.</p></details>
+</section>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.wellsfargo.com/help/online-banking/activity-faqs/" rel="noopener">Wells Fargo, Account Activity Questions</a></li>
+<li><a href="https://www.wellsfargo.com/biz/online-banking/software/quickbooks/webconnect/" rel="noopener">Wells Fargo Business, QuickBooks Web Connect</a></li>
+</ul>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

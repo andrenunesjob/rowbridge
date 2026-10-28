@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert Revolut Business CSV to QBO / QFX / OFX | Rowbridge</title>
+<meta name="description" content="Revolut Business transaction statements download as PDF or CSV. The US help article does not list QBO or QFX. Custom ranges cannot start before the account opened.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/banks/revolut-business.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert Revolut Business CSV to QBO / QFX / OFX | Rowbridge">
+<meta property="og:description" content="Revolut Business transaction statements download as PDF or CSV. The US help article does not list QBO or QFX. Custom ranges cannot start before the account opened.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/banks/revolut-business.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Convert Revolut Business CSV to QBO / QFX / OFX</h1>
+<p>Revolut's US business help article says a transaction statement can be generated as PDF or CSV. It does not mention QBO, QFX, or OFX. This is the business account article, not a personal Revolut account.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Generate a CSV statement</h2>
+<p><a href="https://help.revolut.com/en-US/help/managing-my-business/viewing-my-account-statements/finding-my-account-statement/business/" rel="noopener">Transaction statements</a> (Revolut United States, business) says:</p>
+<ol>
+<li>Go to Home on the main menu.</li>
+<li>Select the three dots and then Statements.</li>
+<li>Choose Transaction statement and apply filters.</li>
+<li>Choose the date range. You cannot select a date before the account open date.</li>
+<li>Choose the file type. Revolut says it supports PDF and CSV.</li>
+<li>Select Generate to download, or Share to email the file.</li>
+</ol>
+<p>Statements are generated in UTC unless you set a local time under Appearance. Revolut says a CSV can then include both local and UTC times. You need permission to manage accounts. The article says a transaction statement contains the company name, registered address, account name and currency, and the transactions for the range. It does not publish the CSV column headings. Extra lines above the table are likely. Set the header row in the converter to the row that names the columns.</p>
+<h2>CSV columns</h2>
+<p>The source linked below does not publish the column headings in the file. After you download it, use the header row you actually see. In the converter, map a date, a description, and either one signed amount or separate money-in and money-out columns. The preview rewrites dates as YYYY-MM-DD so you can confirm the day and the month before you download.</p>
+<h2>Convert it</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop in the CSV or Excel file. Excel (.xlsx or .xls) is fine.</li>
+<li>If the bank put your name or account number above the table, set the header row to the row that names the columns.</li>
+<li>Map the date, the description, and either one signed amount or separate paid-in and paid-out columns. Confirm the dates in the preview, which shows them as YYYY-MM-DD.</li>
+<li>Choose QBO for QuickBooks Desktop, QFX for Quicken, or OFX, and download.</li>
+</ol>
+<h2>Import the converted file</h2>
+<ul>
+<li><a href="/rowbridge/to/quickbooks-online.html">QuickBooks Online</a></li>
+<li><a href="/rowbridge/to/quickbooks-desktop.html">QuickBooks Desktop</a> (needs a .qbo file)</li>
+<li><a href="/rowbridge/to/quicken.html">Quicken for Windows or Mac</a> (needs a .qfx file)</li>
+</ul>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Can I get OFX or QBO from Revolut Business?</summary><p>Not according to this help article. The file types it names are PDF and CSV.</p></details>
+<details><summary>The dates look like UTC.</summary><p>Revolut says statements use UTC unless you set a local time in Appearance before you download. Check the preview before you import.</p></details>
+<details><summary>I need dates from before the account existed.</summary><p>Revolut says you cannot select a date prior to the account open date.</p></details>
+</section>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://help.revolut.com/en-US/help/managing-my-business/viewing-my-account-statements/finding-my-account-statement/business/" rel="noopener">Revolut United States, Business transaction statements</a></li>
+</ul>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

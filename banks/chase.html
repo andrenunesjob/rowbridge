@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert Chase CSV to QBO / QFX / OFX | Rowbridge</title>
+<meta name="description" content="Chase Spending Planner on a computer downloads CSV, QFX, QIF, or QBO for the last two years. The Chase mobile app download described there is PDF only.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/banks/chase.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert Chase CSV to QBO / QFX / OFX | Rowbridge">
+<meta property="og:description" content="Chase Spending Planner on a computer downloads CSV, QFX, QIF, or QBO for the last two years. The Chase mobile app download described there is PDF only.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/banks/chase.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Convert Chase CSV to QBO / QFX / OFX</h1>
+<p>Chase's article on Spending Planner is the download we can cite. It is a spending download for Chase checking and credit card customers, not a promise about every button on the account-activity page.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Download from Spending Planner</h2>
+<p><a href="https://www.chase.com/personal/banking/education/budgeting-saving/what-is-chase-spending-planner" rel="noopener">What's Chase Spending Planner?</a> (31 October 2024) says:</p>
+<ul>
+<li>On a desktop computer, sign in at Chase.com and open the tool under &quot;Manage Your Spending Plan&quot; in the &quot;Plan, Track, or Manage&quot; dashboard. Further down the Spending Summary tab there are options to download spending data for this year and the previous one.</li>
+<li>On a desktop computer you can download transactions in a spreadsheet (CSV), Quicken Web Connect (QFX), Quicken or Microsoft Money (QIF), or QuickBooks Web Connect (QBO) for the last two years.</li>
+<li>In the Chase Mobile app, the download described in the article is a PDF of transactions for the last calendar year.</li>
+</ul>
+<p>The two-year cap is the limit Chase states for that desktop download. QIF is not a Web Connect file for current Quicken or for QuickBooks Desktop. If you are on a phone, or you need a file outside that two-year window, the article does not offer a QBO download. Use a CSV from a computer when you have one, and convert it.</p>
+<h2>CSV columns</h2>
+<p>The source linked below does not publish the column headings in the file. After you download it, use the header row you actually see. In the converter, map a date, a description, and either one signed amount or separate money-in and money-out columns. The preview rewrites dates as YYYY-MM-DD so you can confirm the day and the month before you download.</p>
+<h2>Convert it</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop in the CSV or Excel file. Excel (.xlsx or .xls) is fine.</li>
+<li>If the bank put your name or account number above the table, set the header row to the row that names the columns.</li>
+<li>Map the date, the description, and either one signed amount or separate paid-in and paid-out columns. Confirm the dates in the preview, which shows them as YYYY-MM-DD.</li>
+<li>Choose QBO for QuickBooks Desktop, QFX for Quicken, or OFX, and download.</li>
+</ol>
+<h2>Import the converted file</h2>
+<ul>
+<li><a href="/rowbridge/to/quickbooks-online.html">QuickBooks Online</a></li>
+<li><a href="/rowbridge/to/quickbooks-desktop.html">QuickBooks Desktop</a> (needs a .qbo file)</li>
+<li><a href="/rowbridge/to/quicken.html">Quicken for Windows or Mac</a> (needs a .qfx file)</li>
+</ul>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Chase already offers QBO. Why convert a CSV?</summary><p>The QBO option Chase describes is on desktop Spending Planner and covers the last two years. The phone download in that article is PDF only. A CSV from the same desktop tool is what you convert when you need a fresh QBO or QFX file, including when QuickBooks or Quicken will not take the bank's file.</p></details>
+<details><summary>Is this the same as Chase in the UK?</summary><p>No. This article is about Chase.com Spending Planner for Chase consumer accounts in the United States.</p></details>
+<details><summary>Can I convert the PDF from the mobile app?</summary><p>Not with Rowbridge. Download the CSV on a computer.</p></details>
+</section>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.chase.com/personal/banking/education/budgeting-saving/what-is-chase-spending-planner" rel="noopener">Chase, What&#x27;s Chase Spending Planner?</a></li>
+</ul>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

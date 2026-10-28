@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Import a QBO Web Connect file into QuickBooks Desktop | Rowbridge</title>
+<meta name="description" content="QuickBooks Desktop Web Connect only imports .qbo files. Steps from Intuit for downloading and importing a Web Connect file, including the Bank Feeds menu.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/to/quickbooks-desktop.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Import a QBO Web Connect file into QuickBooks Desktop | Rowbridge">
+<meta property="og:description" content="QuickBooks Desktop Web Connect only imports .qbo files. Steps from Intuit for downloading and importing a Web Connect file, including the Bank Feeds menu.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/to/quickbooks-desktop.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Import a QBO file into QuickBooks Desktop</h1>
+<p>QuickBooks Desktop does not import a bank CSV. Intuit's article <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/bank-feeds/download-bank-feed-transactions-quickbooks-desktop/L8o0Aw9VM_US_en_US" rel="noopener">Download bank feed transactions in QuickBooks Desktop</a> says Web Connect only works with .qbo files. QFX and QIF Quicken files will not work.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Before you import</h2>
+<p>From that article, and from <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/import-export-data-files/import-export-data-quickbooks-desktop/L9KS42UxP_US_en_US" rel="noopener">Import and export data in QuickBooks Desktop</a>:</p>
+<ul>
+<li>Set up the account for bank feeds before you download, if you are using bank feeds.</li>
+<li>Back up the company file. Intuit says you cannot undo an import.</li>
+<li>Importing a Web Connect file requires you to be signed in to your Intuit account inside QuickBooks Desktop.</li>
+<li>Intuit says you can't download transactions into the same company file more than once, and that the bank may have to reopen them. A file you build yourself from a CSV is a different path from the bank's own Web Connect download. Still back up first.</li>
+</ul>
+<h2>Import the .qbo file</h2>
+<p>An Intuit reply on <a href="https://quickbooks.intuit.com/learn-support/en-us/banking/downloading-bank-transactions/00/799017" rel="noopener">Downloading bank transactions</a> gives this menu path after you have the .qbo file:</p>
+<ol>
+<li>From the Banking menu, select Bank Feeds, then Import Web Connect Files.</li>
+<li>Select the QBO file, then Open.</li>
+<li>Choose the bank account.</li>
+<li>Select Continue, then OK.</li>
+<li>Go to the Bank Feeds Center to review the transactions.</li>
+</ol>
+<p>If import asks you to sign in, use the Intuit account inside QuickBooks. Intuit's <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/bank-connectivity/fix-web-connect-import-errors/L8o5eQjO4_US_en_US" rel="noopener">Fix Web Connect import errors</a> article says that if you use Advanced Mode you may need to sign in or switch modes, and that you can switch to Classic mode (Register mode) from Banking, Bank Feeds, Change Bank Feeds Mode, then import the .qbo file again.</p>
+<p>QuickBooks Online uses a different screen. See <a href="/rowbridge/to/quickbooks-online.html">upload a file in QuickBooks Online</a>. Quicken needs a .qfx file, not this .qbo file: <a href="/rowbridge/to/quicken.html">import into Quicken</a>.</p>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Can I rename a QFX or CSV to .qbo?</summary><p>No. Intuit says Web Connect only reads .qbo files, and that QFX and QIF will not work. Convert the spreadsheet to a real .qbo file.</p></details>
+<details><summary>QuickBooks says it cannot verify the financial institution.</summary><p>That check is on the bank id inside the .qbo file. The <a href="/rowbridge/guides/csv-to-qbo-quickbooks-desktop.html">CSV to QBO guide</a> explains the id the converter writes and what to try if your version rejects it.</p></details>
+<details><summary>The account is already connected to a bank feed.</summary><p>Importing on top of a live feed can duplicate transactions. Deactivate the feed for that account, or import into a date range the feed does not cover, and back up first.</p></details>
+</section>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+<p class="fine">Sources: Intuit help articles linked above, and the Intuit Community reply on Downloading bank transactions.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

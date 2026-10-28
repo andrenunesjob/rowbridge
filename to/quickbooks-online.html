@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Import a QBO, QFX, or CSV file into QuickBooks Online | Rowbridge</title>
+<meta name="description" content="How to upload a QBO, QFX, OFX, or CSV bank file in QuickBooks Online, from Intuit&#x27;s own upload article, including the file size and column rules.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/to/quickbooks-online.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Import a QBO, QFX, or CSV file into QuickBooks Online | Rowbridge">
+<meta property="og:description" content="How to upload a QBO, QFX, OFX, or CSV bank file in QuickBooks Online, from Intuit&#x27;s own upload article, including the file size and column rules.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/to/quickbooks-online.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Import a QBO, QFX, or CSV file into QuickBooks Online</h1>
+<p>Intuit's article <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/import-transactions/manually-upload-transactions-quickbooks-online/L0rE9OXBz_US_en_US" rel="noopener">Manually upload transactions into QuickBooks Online</a> (updated 24 August 2026) is the source for the steps below. Use it when QuickBooks cannot connect to the bank, or when you need transactions from before the connection started.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>What Intuit accepts</h2>
+<p>For a transaction list, Intuit says the file must be in English and 350 KB or less. They suggest a QuickBooks Online data (QBO) file. You can also upload a Quicken QFX file or a CSV. A separate set of steps on the same page covers .csv, .txt, .qbo, and .ofx, up to 1,000 lines, one transaction per line.</p>
+<p>A CSV needs either 3 columns (Date, Description, Amount) or 4 columns (Date, Description, Credit, Debit). Intuit also says:</p>
+<ul>
+<li>Remove the word &quot;amount&quot; from Credit and Debit headers.</li>
+<li>Leave Amount, Credit, or Debit cells that contain only zero blank.</li>
+<li>Remove numbers from cells in the Description column.</li>
+<li>Use one date format in the whole file. Intuit recommends dd/mm/yyyy.</li>
+<li>If the date cell also contains a weekday (their example is &quot;20/11/2022 TUE&quot;), split that into its own column.</li>
+<li>For a large file, shorten the date range and upload in batches.</li>
+</ul>
+<p>Bank exports often fail those rules. Converting the CSV or Excel file to QBO first avoids remaking the spreadsheet by hand. QuickBooks Desktop cannot use this same upload screen. It needs a <a href="/rowbridge/to/quickbooks-desktop.html">.qbo Web Connect file</a>.</p>
+<h2>Upload the file</h2>
+<ol>
+<li>Go to All apps, then Accounting, then Bank transactions.</li>
+<li>If you see a tile for the account, select it.</li>
+<li>Select the Link account dropdown, then Upload from file. If the account is not connected yet, Intuit also shows Upload from file or &quot;Or upload transactions manually&quot;.</li>
+<li>Select the file and Continue.</li>
+<li>Choose the QuickBooks account. If you do not have one yet, use Add New.</li>
+<li>Continue, match the columns if the file is a CSV, then Continue.</li>
+<li>Select the transactions to import, Continue, then Yes, then Done.</li>
+</ol>
+<p>Intuit says to start the file at least one day before the oldest transaction already in that QuickBooks account, and to check the chart of accounts first so you do not create duplicates. Their article also says an account that is already connected downloads transactions up to a certain date. Upload only the gap you are missing.</p>
+<p>The same article describes uploading a PDF or image of a statement. Rowbridge does not read PDFs. Download CSV or Excel from the bank and convert that.</p>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Should I upload the bank's CSV or a QBO file?</summary><p>Intuit accepts both. They suggest QBO. A CSV has to match the 3-column or 4-column layout and the date rules above. A QBO file skips that cleanup.</p></details>
+<details><summary>The dates landed in the wrong month.</summary><p>Intuit recommends dd/mm/yyyy in that article. A US company file may still expect month-first dates. In the converter, pick the date order that matches the bank file. The preview shows YYYY-MM-DD.</p></details>
+<details><summary>Charges came in as deposits.</summary><p>On the upload screen Intuit describes, if amounts are reversed you can reverse all values. You can also tick Flip signs in the converter before you download.</p></details>
+</section>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+<p class="fine">Source: <a href="https://quickbooks.intuit.com/learn-support/en-us/help-article/import-transactions/manually-upload-transactions-quickbooks-online/L0rE9OXBz_US_en_US" rel="noopener">Intuit, Manually upload transactions into QuickBooks Online</a>.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert American Express Savings CSV to QBO / QFX / OFX | Rowbridge</title>
+<meta name="description" content="American Express Savings does not let Quicken log in for you. Download transactions from the Documents tab and convert the file if it is CSV or Excel.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/banks/american-express-savings.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert American Express Savings CSV to QBO / QFX / OFX | Rowbridge">
+<meta property="og:description" content="American Express Savings does not let Quicken log in for you. Download transactions from the Documents tab and convert the file if it is CSV or Excel.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/banks/american-express-savings.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Convert American Express Savings CSV to QBO / QFX / OFX</h1>
+<p>American Express Savings says it does not let sites like Quicken log in on behalf of customers. You download a file yourself and import it. Card accounts are a different download: see <a href="/rowbridge/banks/american-express.html">American Express cards</a>.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Download transactions</h2>
+<p>Amex's savings FAQ lists these steps:</p>
+<ol>
+<li>Log in to your American Express Savings account.</li>
+<li>Select the Documents tab at the top of the page.</li>
+<li>Select Download Transactions, towards the top right.</li>
+<li>Select the account.</li>
+<li>Select the start date, end date, and file type.</li>
+<li>Select Download.</li>
+</ol>
+<p>The FAQ tells you to choose a file type. It does not name CSV, QFX, QBO, or any other extension. If the file you receive is a spreadsheet, convert that. If Quicken will not import the file the bank labeled for Quicken, download again and pick the spreadsheet type if it is offered on that screen. Do not guess a menu that is not on the page.</p>
+<h2>CSV columns</h2>
+<p>The source linked below does not publish the column headings in the file. After you download it, use the header row you actually see. In the converter, map a date, a description, and either one signed amount or separate money-in and money-out columns. The preview rewrites dates as YYYY-MM-DD so you can confirm the day and the month before you download.</p>
+<h2>Convert it</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop in the CSV or Excel file. Excel (.xlsx or .xls) is fine.</li>
+<li>If the bank put your name or account number above the table, set the header row to the row that names the columns.</li>
+<li>Map the date, the description, and either one signed amount or separate paid-in and paid-out columns. Confirm the dates in the preview, which shows them as YYYY-MM-DD.</li>
+<li>Choose QBO for QuickBooks Desktop, QFX for Quicken, or OFX, and download.</li>
+</ol>
+<h2>Import the converted file</h2>
+<ul>
+<li><a href="/rowbridge/to/quickbooks-online.html">QuickBooks Online</a></li>
+<li><a href="/rowbridge/to/quickbooks-desktop.html">QuickBooks Desktop</a> (needs a .qbo file)</li>
+<li><a href="/rowbridge/to/quicken.html">Quicken for Windows or Mac</a> (needs a .qfx file)</li>
+</ul>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Can Quicken connect to American Express Savings?</summary><p>Amex says Savings does not allow sites like Quicken to log in for you. The documented path is the download on the Documents tab.</p></details>
+<details><summary>Which file type should I pick?</summary><p>The help article does not list them. Pick the type on the screen. Use the converter when the result is CSV or Excel.</p></details>
+<details><summary>Is this the same as an American Express card?</summary><p>No. Card downloads are described on Amex's card help pages and on the <a href="/rowbridge/banks/american-express.html">card page</a>.</p></details>
+</section>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.americanexpress.com/en-us/banking/online-savings/faq/mint-or-quicken/" rel="noopener">American Express Savings, Quicken FAQ</a></li>
+</ul>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

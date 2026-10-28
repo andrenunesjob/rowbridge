@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert Capital One CSV to QBO / QFX / OFX | Rowbridge</title>
+<meta name="description" content="Quicken users report Capital One savings and CD QFX files failing financial-institution checks. A CSV download is the workaround they describe, including files covering up to two years.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/banks/capital-one.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert Capital One CSV to QBO / QFX / OFX | Rowbridge">
+<meta property="og:description" content="Quicken users report Capital One savings and CD QFX files failing financial-institution checks. A CSV download is the workaround they describe, including files covering up to two years.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/banks/capital-one.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Convert Capital One CSV to QBO / QFX / OFX</h1>
+<p>Capital One's own pages and a Quicken Community thread describe different downloads. Read both before assuming a QFX file will import.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>What is documented</h2>
+<p>On the Quicken Community thread <a href="https://community.quicken.com/discussion/7975971/capitol-one-download" rel="noopener">Capitol One Download</a>, a customer said Quicken reported it was unable to verify the financial institution when importing downloads for a Capital One savings account and CDs. Credit card downloads were still working for them. A community reply says Capital One no longer supports QFX transaction downloads. The original poster replied that the website still showed a QFX option, that the financial-institution number no longer worked, and that they were downloading the CSV instead. They wrote that Capital One allowed up to two years of transactions in a single file. That two-year figure is the poster's report, not a limit printed on a Capital One help page we could find.</p>
+<p>Capital One's <a href="https://www.capitalone.com/small-business/credit-cards/charge-cards/" rel="noopener">business charge cards</a> page says purchase records can be downloaded in formats including Quicken, QuickBooks, and Excel. That is a product description, not a menu path, and it is about those charge cards rather than the savings and CD problem in the Quicken thread.</p>
+<p>We did not find a Capital One help article that lists the consumer click-path or the CSV column names. In online banking, use the download or export control on the account and choose the spreadsheet if QFX will not import. Then convert the spreadsheet.</p>
+<h2>CSV columns</h2>
+<p>The source linked below does not publish the column headings in the file. After you download it, use the header row you actually see. In the converter, map a date, a description, and either one signed amount or separate money-in and money-out columns. The preview rewrites dates as YYYY-MM-DD so you can confirm the day and the month before you download.</p>
+<h2>Convert it</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop in the CSV or Excel file. Excel (.xlsx or .xls) is fine.</li>
+<li>If the bank put your name or account number above the table, set the header row to the row that names the columns.</li>
+<li>Map the date, the description, and either one signed amount or separate paid-in and paid-out columns. Confirm the dates in the preview, which shows them as YYYY-MM-DD.</li>
+<li>Choose QBO for QuickBooks Desktop, QFX for Quicken, or OFX, and download.</li>
+</ol>
+<h2>Import the converted file</h2>
+<ul>
+<li><a href="/rowbridge/to/quickbooks-online.html">QuickBooks Online</a></li>
+<li><a href="/rowbridge/to/quickbooks-desktop.html">QuickBooks Desktop</a> (needs a .qbo file)</li>
+<li><a href="/rowbridge/to/quicken.html">Quicken for Windows or Mac</a> (needs a .qfx file)</li>
+</ul>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>The QFX file is on the website but Quicken rejects it.</summary><p>That matches the Quicken Community report: the option can still be listed while Quicken says it cannot verify the institution. Download the CSV and convert it to QFX.</p></details>
+<details><summary>Does every Capital One account lack a QuickBooks file?</summary><p>No. Capital One's business charge-card page says those purchase records can be downloaded for Quicken, QuickBooks, and Excel. Savings and CD QFX imports are what the community thread is about.</p></details>
+<details><summary>How far back can one CSV go?</summary><p>The only figure we can cite is the original poster's note of up to two years in one file. Confirm the date range on the download screen.</p></details>
+</section>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://community.quicken.com/discussion/7975971/capitol-one-download" rel="noopener">Quicken Community, Capitol One Download</a></li>
+<li><a href="https://www.capitalone.com/small-business/credit-cards/charge-cards/" rel="noopener">Capital One, business charge cards</a></li>
+</ul>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>
