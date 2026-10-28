@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Import a QFX Web Connect file into Quicken | Rowbridge</title>
+<meta name="description" content="How to import a .qfx Web Connect file into Quicken for Windows and Quicken for Mac, from Quicken&#x27;s own help. QIF is not Web Connect.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/to/quicken.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Import a QFX Web Connect file into Quicken | Rowbridge">
+<meta property="og:description" content="How to import a .qfx Web Connect file into Quicken for Windows and Quicken for Mac, from Quicken&#x27;s own help. QIF is not Web Connect.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/to/quicken.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Import a QFX file into Quicken</h1>
+<p>Quicken's Web Connect import reads a .qfx file, not a bank CSV. These steps are from Quicken's help, not from a bank.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Quicken for Windows</h2>
+<p><a href="https://info.quicken.com/win/how-do-i-update-my-spending-accounts" rel="noopener">How do I update my spending accounts?</a> says:</p>
+<ol>
+<li>Back up the Quicken data file first. Quicken's <a href="https://info.quicken.com/win/importing-files-from-your-bank" rel="noopener">Importing files from your bank</a> article says to back up before a QFX import.</li>
+<li>Choose File menu, then File Import, then Web Connect File.</li>
+<li>Select the .qfx file and select OK.</li>
+<li>If you already have the account, choose Link and select that account. Otherwise name the new account.</li>
+<li>Open the account and accept the transactions. Quicken may add them automatically, depending on your download preferences.</li>
+</ol>
+<p>The same import article also lists File, File Import, Quicken Transfer Format (.QFX) File, then Browse and Open. <a href="https://www.quicken.com/support/web-connect-troubleshooting/" rel="noopener">Web Connect troubleshooting</a> lists File, File Import, Web Connect (.QFX) File. Use whichever of those labels your version shows.</p>
+<h2>Quicken for Mac</h2>
+<p><a href="https://info.quicken.com/mac/downloading-transactions" rel="noopener">Downloading transactions</a> (Quicken for Mac) says:</p>
+<ol>
+<li>Back up the data file.</li>
+<li>Go to File, Import, Bank or Brokerage File (OFX, QFX).</li>
+<li>Select the file and open it.</li>
+<li>On Choose Your Accounts, pick the account.</li>
+<li>Review the register.</li>
+</ol>
+<p>The Windows troubleshooting article gives the Mac path as File, Import, Bank or Brokerage File (OFX, QFX) as well.</p>
+<h2>What will not import as Web Connect</h2>
+<ul>
+<li>Quicken says only a QFX file downloads transactions this way. <a href="https://www.quicken.com/support/web-connect-troubleshooting/" rel="noopener">QIF files will not work with Web Connect</a>.</li>
+<li>If the bank no longer supports Web Connect, Quicken says the file cannot be authorized when you import it. Error CC-885 is covered in <a href="/rowbridge/guides/fix-quicken-cc-885-qfx.html">this guide</a>.</li>
+<li>Quicken's <a href="https://info.quicken.com/win/import-transactions-from-csv-file" rel="noopener">CSV import</a> is a different feature. The file must use Quicken's own column order (Date, Payee, FI Payee, Amount, Debit/Credit, Category, Account, and optional Tag, Memo, Chknum). A bank CSV does not match that layout, and Quicken says CSV import does not check for transactions you already have.</li>
+</ul>
+<p>QuickBooks Desktop needs a .qbo file instead: <a href="/rowbridge/to/quickbooks-desktop.html">import into QuickBooks Desktop</a>. QuickBooks Online can take QFX, QBO, or CSV: <a href="/rowbridge/to/quickbooks-online.html">upload in QuickBooks Online</a>.</p>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>The bank only gave me a CSV or a QIF file.</summary><p>Convert the CSV or Excel file to QFX, then use the Web Connect import above. Do not rename the CSV to .qfx.</p></details>
+<details><summary>Quicken created a second account.</summary><p>On the import prompt, link the file to the existing account instead of creating a new one. Quicken's Windows article calls this Link.</p></details>
+<details><summary>Do I need an active Quicken subscription?</summary><p>Quicken's troubleshooting page says Web Connect files need online services to validate the file. An expired subscription or an unsupported Quicken version cannot import Web Connect.</p></details>
+</section>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+<p class="fine">Sources: Quicken help pages linked above.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

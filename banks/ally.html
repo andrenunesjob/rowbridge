@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert Ally Bank CSV to QBO / QFX / OFX | Rowbridge</title>
+<meta name="description" content="Ally Bank lets you download account activity as CSV or Quicken QFX, and shows up to 18 months online. Convert the CSV when QuickBooks Desktop needs a QBO file.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/banks/ally.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert Ally Bank CSV to QBO / QFX / OFX | Rowbridge">
+<meta property="og:description" content="Ally Bank lets you download account activity as CSV or Quicken QFX, and shows up to 18 months online. Convert the CSV when QuickBooks Desktop needs a QBO file.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/banks/ally.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/banks/">Banks</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Convert Ally Bank CSV to QBO / QFX / OFX</h1>
+<p>Ally Bank's help page says you can download account activity as a comma-separated (CSV) file or a Quicken (QFX) file. It does not mention a QuickBooks Web Connect (.qbo) file. QuickBooks Desktop's Web Connect import only reads .qbo, so a CSV converted to QBO is the route when the QFX file is the wrong format for QuickBooks.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Download the CSV</h2>
+<p>Ally's account-information FAQ says:</p>
+<ol>
+<li>Log in and select the account.</li>
+<li>Scroll to Transactions History.</li>
+<li>Select the download icon.</li>
+<li>Save a CSV file or a Quicken QFX file.</li>
+</ol>
+<p>The same page says you can see up to 18 months of account activity, and that you can download activity to Quicken. If every Ally Bank account is closed, Ally says you can access account information online for 60 days, and still view statements and tax forms for the last 7 years. The download steps above are for an open account's transaction history, not a promise that a closed account offers the same CSV.</p>
+<p>Ally also says it does not currently offer business banking products. This page is about Ally Bank deposit accounts.</p>
+<h2>CSV columns</h2>
+<p>The source linked below does not publish the column headings in the file. After you download it, use the header row you actually see. In the converter, map a date, a description, and either one signed amount or separate money-in and money-out columns. The preview rewrites dates as YYYY-MM-DD so you can confirm the day and the month before you download.</p>
+<h2>Convert it</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop in the CSV or Excel file. Excel (.xlsx or .xls) is fine.</li>
+<li>If the bank put your name or account number above the table, set the header row to the row that names the columns.</li>
+<li>Map the date, the description, and either one signed amount or separate paid-in and paid-out columns. Confirm the dates in the preview, which shows them as YYYY-MM-DD.</li>
+<li>Choose QBO for QuickBooks Desktop, QFX for Quicken, or OFX, and download.</li>
+</ol>
+<h2>Import the converted file</h2>
+<ul>
+<li><a href="/rowbridge/to/quickbooks-online.html">QuickBooks Online</a></li>
+<li><a href="/rowbridge/to/quickbooks-desktop.html">QuickBooks Desktop</a> (needs a .qbo file)</li>
+<li><a href="/rowbridge/to/quicken.html">Quicken for Windows or Mac</a> (needs a .qfx file)</li>
+</ul>
+<h2>FAQ</h2>
+<section class="faq">
+<details><summary>Does Ally offer a QBO download?</summary><p>Ally's FAQ names CSV and Quicken QFX only. It does not name QBO. Use the CSV with the converter if QuickBooks Desktop is what you need.</p></details>
+<details><summary>How far back does the download go?</summary><p>Ally says you can see up to 18 months of account activity. The FAQ does not spell out a separate limit for the file itself.</p></details>
+<details><summary>I already downloaded a QFX file and Quicken rejected it.</summary><p>Download the CSV from the same screen and convert that to QFX. See <a href="/rowbridge/guides/fix-quicken-cc-885-qfx.html">Quicken error CC-885</a> if Web Connect for the institution has stopped.</p></details>
+</section>
+<h2>Sources</h2>
+<ul>
+<li><a href="https://www.ally.com/help/bank/account-information/" rel="noopener">Ally Bank, Account information FAQs</a></li>
+</ul>
+<p class="fine">Last checked: 2026-10-28. Menus move. If a label on this page does not match what you see, use the bank's own help page linked below.</p>
+
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Bank, card, QuickBooks, Quicken, and Intuit names are trademarks of their owners; Rowbridge is not affiliated with them.</span>
+<nav aria-label="Footer"><a href="/rowbridge/banks/">Banks</a><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>
