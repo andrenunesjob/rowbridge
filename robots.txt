@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /rowbridge/thanks.html
+
+Sitemap: https://andrenunesjob.github.io/rowbridge/sitemap.xml

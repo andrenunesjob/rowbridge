@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QuickBooks Online bank upload: CSV or QBO? | Rowbridge</title>
+<meta name="description" content="QuickBooks Online accepts CSV, QBO, QFX and OFX bank uploads. Learn when to use each, the 3- and 4-column CSV layouts, and how to fix common upload errors.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/guides/quickbooks-online-csv-vs-qbo.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="QuickBooks Online bank upload: CSV or QBO? | Rowbridge">
+<meta property="og:description" content="QuickBooks Online accepts CSV, QBO, QFX and OFX bank uploads. Learn when to use each, the 3- and 4-column CSV layouts, and how to fix common upload errors.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/guides/quickbooks-online-csv-vs-qbo.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>QuickBooks Online bank upload: CSV or QBO?</h1>
+<p>Unlike QuickBooks Desktop, QuickBooks Online can upload bank files in several formats: <strong>.csv, .qbo, .qfx and .ofx</strong> (Transactions &rsaquo; Bank transactions &rsaquo; Link account &rsaquo; Upload from file). Intuit allows up to 1,000 lines per upload, so split very long files.</p>
+<h2>When a plain CSV is fine</h2>
+<p>If your bank's CSV is already in one of the layouts QuickBooks Online expects, you can upload it directly and map the columns:</p>
+<ul>
+<li><strong>3-column:</strong> Date, Description, Amount (money out negative)</li>
+<li><strong>4-column:</strong> Date, Description, Credit, Debit</li>
+</ul>
+<p>Bank exports often break this with extra header lines above the table, summary rows at the bottom, a running balance, day-first dates, or "1.234,56" style numbers.</p>
+<h2>When QBO is easier</h2>
+<ul>
+<li>The CSV has a messy layout, or the upload keeps failing with a mapping or date error.</li>
+<li>You want each transaction to carry a unique ID, so uploading overlapping date ranges is less likely to create duplicates.</li>
+<li>You also use QuickBooks Desktop or Quicken and want one workflow for all of them.</li>
+</ul>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>Fixing common upload errors</h2>
+<ul>
+<li><strong>Upload fails or finds no transactions:</strong> remove extra lines above the header, or convert to QBO, which ignores them.</li>
+<li><strong>Dates in the wrong month:</strong> the file uses DD/MM/YYYY while QuickBooks expected MM/DD/YYYY. In the converter, pick the right date format and the output will be unambiguous.</li>
+<li><strong>Amounts all positive:</strong> the bank uses separate debit/credit columns or a DR/CR column. Map those in the converter and it will produce signed amounts.</li>
+<li><strong>Duplicates:</strong> don't upload files for accounts already connected to a live bank feed for the same dates. Intuit recommends uploading only for periods the feed doesn't cover.</li>
+</ul>
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Not affiliated with Intuit or Quicken Inc.</span>
+<nav aria-label="Footer"><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convert bank CSV &amp; Excel to QBO, QFX, OFX in your browser | Rowbridge</title>
+<meta name="description" content="Free bank statement converter: turn CSV, XLSX or XLS exports into QBO (QuickBooks Web Connect), QFX (Quicken) or OFX. Runs 100% in your browser. Your file is never uploaded. No signup.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Convert bank CSV &amp; Excel to QBO, QFX, OFX in your browser | Rowbridge">
+<meta property="og:description" content="Free bank statement converter: turn CSV, XLSX or XLS exports into QBO (QuickBooks Web Connect), QFX (Quicken) or OFX. Runs 100% in your browser. Your file is never uploaded. No signup.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+<script src="/rowbridge/vendor/papaparse.min.js" defer></script>
+<script src="/rowbridge/assets/core.js" defer></script>
+<script src="/rowbridge/assets/app.js" defer></script>
+<script src="/rowbridge/assets/forms.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/" aria-current=page>Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap">
+<section class="hero">
+<h1>Bank CSV or Excel to QBO, QFX &amp; OFX. Your file stays on your computer.</h1>
+<p class="lead">Your bank only gives you a CSV, and QuickBooks Desktop or Quicken won't take it. Drop the file here and download a Web Connect file you can import. The conversion runs entirely in your browser, so nothing is uploaded.</p>
+<ul class="chips"><li>Never uploaded</li><li>No signup</li><li>CSV, XLSX, XLS</li><li>QBO · QFX · OFX</li></ul>
+</section>
+
+<section class="card" id="converter" aria-label="Converter">
+<div id="drop" class="drop" tabindex="0" role="button" aria-describedby="dropHint">
+<input type="file" id="file" accept=".csv,.tsv,.txt,.xlsx,.xls,.xlsm,.ods,text/csv" hidden>
+<strong>Drop your bank statement here</strong>
+<span>or <span class="linklike">choose a file</span></span>
+<small id="dropHint">CSV, XLSX or XLS · read by your browser only, never uploaded · free up to 30 transactions per file</small>
+</div>
+<p class="sample">No file handy? <button type="button" id="sampleBtn" class="linkbtn">Try it with a sample statement</button></p>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+
+<div id="work" hidden>
+<div class="filebar"><span id="fileName"></span><select id="sheet" aria-label="Worksheet" hidden></select><button type="button" id="reset" class="btn quiet small">Start over</button></div>
+<div class="grid2">
+<fieldset>
+<legend>1. Check the columns</legend>
+<div class="field"><label for="headerRow">Header row</label><select id="headerRow"></select></div>
+<div id="mapFields" class="fields-2"></div>
+<p class="hint">Use either one signed Amount column, or separate Debit and Credit columns.</p>
+<div class="fields-2">
+<div class="field"><label for="dateOrder">Dates in the file</label>
+<select id="dateOrder"><option value="MDY">MM/DD/YYYY (US)</option><option value="DMY">DD/MM/YYYY (UK, EU, AU…)</option><option value="YMD">YYYY-MM-DD</option></select></div>
+<div class="field"><label for="decimal">Number format</label>
+<select id="decimal"><option value=".">1,234.56</option><option value=",">1.234,56</option></select></div>
+</div>
+<label class="check"><input type="checkbox" id="flip"> <span>Flip signs <span class="hint">(tick if spending shows as positive, common in credit card exports)</span></span></label>
+<button type="button" class="pro-lock" data-pro="save-mapping" data-pro-text="Saving this column mapping">Save this mapping for next time <span class="badge">PRO</span></button>
+</fieldset>
+<fieldset>
+<legend>2. Choose the output</legend>
+<div class="radios" role="radiogroup" aria-label="Output format">
+<label><input type="radio" name="format" value="qbo" checked> QBO</label>
+<label><input type="radio" name="format" value="qfx"> QFX</label>
+<label><input type="radio" name="format" value="ofx"> OFX</label>
+</div>
+<p class="hint" id="fmtHelp"></p>
+<div class="field" id="syntaxRow"><label for="syntax">OFX version</label><select id="syntax"><option value="sgml">OFX 1.02 (SGML, widest compatibility)</option><option value="xml">OFX 2.2 (XML, keeps accented characters)</option></select></div>
+<div class="fields-2">
+<div class="field"><label for="acctType">Account type</label><select id="acctType"><option value="CHECKING">Checking / current</option><option value="SAVINGS">Savings</option><option value="CREDITCARD">Credit card</option><option value="MONEYMRKT">Money market</option></select></div>
+<div class="field"><label for="currency">Currency</label><select id="currency"><option>USD</option><option>CAD</option><option>GBP</option><option>EUR</option><option>AUD</option><option>NZD</option><option>ZAR</option><option>SGD</option><option>INR</option><option>CHF</option></select></div>
+<div class="field"><label for="acctId">Account number</label><input type="text" id="acctId" inputmode="numeric" autocomplete="off" placeholder="e.g. last digits 4321" maxlength="22"></div>
+<div class="field" id="routingRow"><label for="routing">Routing / sort code</label><input type="text" id="routing" inputmode="numeric" autocomplete="off" placeholder="optional" maxlength="9"></div>
+</div>
+<p class="hint">QuickBooks and Quicken use the account number to recognise the account on every import. Use the same value each time (it never leaves this page).</p>
+<div class="field" id="bidRow"><label for="intuBid">Intuit bank ID (INTU.BID)</label><input type="text" id="intuBid" value="3000" inputmode="numeric" maxlength="6">
+<p class="hint">QuickBooks and Quicken only accept Web Connect files that name a bank they support. <strong>3000</strong> is the default most converters use and is generally accepted. If you get a "can't verify the financial institution" error, or Quicken CC-885, try another participating bank's ID. See the <a href="/rowbridge/guides/csv-to-qbo-quickbooks-desktop.html#bank-id">guide</a>.</p></div>
+<div class="field"><label for="ledger">Ending balance <span class="hint">(optional)</span></label><input type="text" id="ledger" inputmode="decimal" autocomplete="off" placeholder="from your statement, e.g. 2,450.10">
+<p class="hint">If you leave this blank we use the balance column, or the net total of the transactions.</p></div>
+</fieldset>
+</div>
+<p id="dateWarn" class="warn" hidden></p>
+<div id="summary" class="summary"></div>
+<div class="table-wrap"><table id="preview"></table></div>
+<div id="rowErrors"></div>
+<div id="limitNote" class="upsell" hidden></div>
+<div class="actions">
+<button type="button" id="download" class="btn">Download .qbo</button>
+<button type="button" class="pro-lock" data-pro="batch" data-pro-text="Converting several files at once">Convert several files at once <span class="badge">PRO</span></button>
+</div>
+<div id="proNote" class="upsell" hidden><p><span class="what">This</span> is part of Pro, which isn't available yet. Join the early-access list and we'll let you know when it is.</p><a class="btn small" href="/rowbridge/pricing.html?from=pro-feature#waitlist" data-track="pro_cta" data-track-label="feature">See Pro &amp; join the waitlist</a></div>
+<div id="afterDownload" class="next-steps" hidden>
+<h3>Import it</h3>
+<ul>
+<li><strong>QuickBooks Desktop:</strong> File &rsaquo; Utilities &rsaquo; Import &rsaquo; Web Connect Files, pick the .qbo, link it to your account.</li>
+<li><strong>QuickBooks Online:</strong> Transactions &rsaquo; Bank transactions &rsaquo; Link account &rsaquo; Upload from file.</li>
+<li><strong>Quicken (Windows):</strong> File &rsaquo; File Import &rsaquo; Web Connect (.QFX) File. <strong>Quicken (Mac):</strong> File &rsaquo; Import &rsaquo; Bank or Brokerage File.</li>
+</ul>
+<p class="fine">Tip: import into a test company file or a backup first if this is your first time.</p>
+</div>
+</div>
+</section>
+
+<section class="block">
+<h2>How it works</h2>
+<ol class="steps">
+<li><h3>Export from your bank</h3><p>Download your transactions as CSV or Excel from online banking.</p></li>
+<li><h3>Check the preview</h3><p>Columns, date format and number format are detected automatically. Fix anything that looks off.</p></li>
+<li><h3>Download &amp; import</h3><p>Get a .qbo, .qfx or .ofx file with unique transaction IDs, the right date range and an ending balance.</p></li>
+</ol>
+</section>
+
+<section class="block">
+<h2>Private by design</h2>
+<p>Bank statements are some of the most sensitive files you have. Most online converters ask you to upload them to their servers. Rowbridge doesn't: the page loads once, and your file is read and converted by JavaScript in your own browser. You can check this yourself. Open your browser's developer tools, watch the Network tab, and convert a file. No request carries your data. Apart from anonymous usage counts (like "a file was converted", never its contents), the page talks to no other server, and a strict security policy enforces that in your browser.</p>
+</section>
+
+<section class="block faq">
+<h2>Questions</h2>
+<details><summary>Why can't I just import the CSV?</summary><p>QuickBooks Desktop has no import for bank-statement CSV files. Its bank import is Web Connect (.qbo). Quicken imports QFX best, and its CSV import is limited or missing depending on the version. QuickBooks Online does accept CSV, but a .qbo file skips the column-mapping step and gives each transaction a unique ID.</p></details>
+<details><summary>Which banks does it work with?</summary><p>Any bank that exports CSV or Excel. Headers in English and the most common German, French, Spanish and Dutch terms are recognised. Files without a header row work too. You can always set each column by hand.</p></details>
+<details><summary>My bank has separate Debit and Credit columns.</summary><p>That's supported. Map both and we combine them into one signed amount, with money out as negative. "Paid in / Paid out", "Withdrawals / Deposits" and DR/CR indicator columns work too.</p></details>
+<details><summary>Will re-importing the same file create duplicates?</summary><p>Each transaction gets a stable ID (FITID) built from its date, amount, description and account number. Converting the same rows again produces the same IDs, so QuickBooks and Quicken can recognise transactions they've already seen. Keep the account number the same between imports.</p></details>
+<details><summary>What does the free version include?</summary><p>Everything, for files of up to 30 transactions. Larger files convert their first 30 transactions. Pro (coming soon) removes the limit and adds batch conversion and saved column mappings. See <a href="/rowbridge/pricing.html">pricing</a>.</p></details>
+<details><summary>Do you support PDF statements?</summary><p>Not yet. Download CSV or Excel from your online banking instead. PDFs need text recognition, and doing that well usually means uploading the file, which we want to avoid.</p></details>
+</section>
+
+<section class="card" id="waitlist-mini">
+<h2 class="mt0">Converting more than 30 transactions, or many files?</h2>
+<p>Pro will add unlimited rows, batch conversion and saved mappings for your bank. Join the waitlist for early-access pricing.</p>
+<form class="inline-wl" name="waitlist-converter" method="POST" action="/rowbridge/thanks.html" data-waitlist novalidate>
+<input type="hidden" name="form-name" value="waitlist-converter">
+<input type="hidden" name="source" value="">
+<p class="hidden-field" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<div class="field"><label for="waitlist-converter-email">Email</label><input type="email" id="waitlist-converter-email" name="email" required autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label for="waitlist-converter-software">I use</label><select name="software" id="waitlist-converter-software" required>
+<option value="">Choose…</option>
+<option>QuickBooks Desktop</option>
+<option>QuickBooks Online</option>
+<option>Quicken</option>
+<option>Other</option>
+</select></div>
+<button class="btn" type="submit">Join the waitlist</button>
+<p class="form-error" role="alert" hidden></p>
+</form>
+<p class="fine">Only used to tell you when Pro is ready. No spam, unsubscribe any time. See <a href="/rowbridge/privacy.html">privacy</a>.</p>
+</section>
+
+<section class="block">
+<h2>Guides</h2>
+<div class="guides">
+<a href="/rowbridge/guides/csv-to-qbo-quickbooks-desktop.html"><strong>CSV to QBO for QuickBooks Desktop</strong><span>Import bank CSV files into QuickBooks Desktop with Web Connect.</span></a>
+<a href="/rowbridge/guides/fix-quicken-cc-885-qfx.html"><strong>Quicken error CC-885</strong><span>What it means, and how to keep importing with a QFX file.</span></a>
+<a href="/rowbridge/guides/quickbooks-online-csv-vs-qbo.html"><strong>QuickBooks Online: CSV or QBO?</strong><span>When each upload format works best, and common errors.</span></a>
+</div>
+</section>
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Not affiliated with Intuit or Quicken Inc.</span>
+<nav aria-label="Footer"><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

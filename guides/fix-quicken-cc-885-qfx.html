@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quicken error CC-885: how to keep importing with a QFX file | Rowbridge</title>
+<meta name="description" content="Quicken error CC-885 means Web Connect for your bank has been discontinued. Learn how to keep your register up to date by converting your bank CSV or Excel export to QFX in your browser.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/guides/fix-quicken-cc-885-qfx.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Quicken error CC-885: how to keep importing with a QFX file | Rowbridge">
+<meta property="og:description" content="Quicken error CC-885 means Web Connect for your bank has been discontinued. Learn how to keep your register up to date by converting your bank CSV or Excel export to QFX in your browser.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/guides/fix-quicken-cc-885-qfx.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>Quicken error CC-885: keep importing with a QFX file</h1>
+<p>Quicken shows <strong>CC-885</strong> when it can't update or import an account because <em>Web Connect / Express Web Connect support for your financial institution has been temporarily or permanently discontinued</em> (see <a href="https://www.quicken.com/support/error-when-using-online-services-cc-885/" rel="noopener">Quicken's support article</a>). It usually happens after a bank stops supporting Quicken downloads, changes its connection method, or merges with another bank. You'll often see it when you import a .qfx file you downloaded from the bank.</p>
+<h2>First, the quick checks</h2>
+<ol>
+<li><strong>Wait 24 hours and try again.</strong> Quicken says the outage is sometimes temporary.</li>
+<li><strong>Check whether your bank now offers a different connection</strong> in Quicken (for example Express Web Connect+). If it does and you're happy with it, reconnecting the account may be enough.</li>
+<li>If downloads for your bank have really stopped, or you need transactions the connection doesn't provide, read on.</li>
+</ol>
+<h2>Keep importing: CSV → QFX</h2>
+<p>Almost every bank still lets you download transactions as CSV or Excel. You can turn that export into a QFX file that names a financial institution Quicken accepts, then import it into your existing account.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<ol>
+<li>Download your transactions from online banking as <strong>CSV</strong> (or .xlsx/.xls).</li>
+<li>Open the <a href="/rowbridge/">converter</a>, drop the file in and check the columns, date format and preview.</li>
+<li>Choose <strong>QFX</strong>, the account type, and the account number. Use the same number every time so Quicken links future imports to the same account.</li>
+<li>Download the .qfx file.</li>
+<li><strong>Quicken for Windows:</strong> File &rsaquo; File Import &rsaquo; Web Connect (.QFX) File. <strong>Quicken for Mac:</strong> File &rsaquo; Import &rsaquo; Bank or Brokerage File (OFX, QFX).</li>
+<li>When Quicken asks, <strong>link it to your existing account</strong> rather than creating a new one, then accept the transactions.</li>
+</ol>
+<h2>If Quicken still refuses the file</h2>
+<ul>
+<li><strong>Account is still set up for the discontinued connection.</strong> In Quicken for Windows open the account, then Account Details &rsaquo; Online Services and <em>Deactivate</em> online services. Then import the QFX and link it to the account.</li>
+<li><strong>Bank ID not accepted.</strong> Quicken checks the bank ID (INTU.BID) inside the file against the institutions that support Web Connect. If yours isn't accepted, change the <em>Intuit bank ID</em> field in the converter to another participating bank's ID.</li>
+<li><strong>Wrong signs or dates.</strong> Use <em>Flip signs</em> for card exports that show charges as positive, and check DD/MM vs MM/DD.</li>
+<li><strong>Back up first.</strong> Make a backup (File &rsaquo; Backup and Restore) before your first import.</li>
+</ul>
+<p class="fine">Rowbridge isn't affiliated with Quicken Inc. Quicken behaviour varies by version. These steps reflect Quicken for Windows and Mac as of 2026.</p>
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Not affiliated with Intuit or Quicken Inc.</span>
+<nav aria-label="Footer"><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>

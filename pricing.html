@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pricing: free bank statement converter, Pro early access | Rowbridge</title>
+<meta name="description" content="Rowbridge is free for files up to 30 transactions. Pro (early access) adds unlimited rows, batch files and saved mappings for $9/month or $49 lifetime. Files never leave your computer.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/pricing.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pricing: free bank statement converter, Pro early access | Rowbridge">
+<meta property="og:description" content="Rowbridge is free for files up to 30 transactions. Pro (early access) adds unlimited rows, batch files and saved mappings for $9/month or $49 lifetime. Files never leave your computer.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/pricing.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+<script src="/rowbridge/assets/forms.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html" aria-current=page>Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow">
+<section class="hero"><h1>Simple pricing</h1>
+<p class="lead">Converting a file is free and needs no signup. Pro is for people who import every month, or bookkeepers with many clients. It isn't on sale yet. Join the waitlist and we'll offer you early-access pricing when it launches.</p></section>
+<div class="plans">
+<div class="plan">
+<h2>Free</h2>
+<p class="price">$0</p>
+<p class="alt-price">no account needed</p>
+<ul>
+<li>CSV, XLSX and XLS input</li>
+<li>QBO, QFX and OFX output</li>
+<li>Automatic column, date and number detection</li>
+<li>Up to 30 transactions per file</li>
+<li>Runs 100% in your browser</li>
+</ul>
+<a class="btn ghost" href="/rowbridge/" data-track="pricing_cta" data-track-label="free">Convert a file</a>
+</div>
+<div class="plan featured">
+<h2>Pro <span class="badge">EARLY ACCESS</span></h2>
+<p class="price">$9 <small>/ month</small></p>
+<p class="alt-price">or <strong>$49 once</strong> for lifetime access</p>
+<ul>
+<li>Everything in Free</li>
+<li><strong>Unlimited</strong> transactions per file</li>
+<li><strong>Batch:</strong> convert many files in one go</li>
+<li><strong>Saved mappings</strong> for each bank layout</li>
+<li>Still 100% in your browser, no uploads</li>
+</ul>
+<a class="btn" href="#waitlist" data-plan="monthly" data-track="pricing_cta" data-track-label="monthly">Join the waitlist</a>
+</div>
+</div>
+<p class="fine">Many converters charge $15–$50 a month, and most of them upload your statements to their servers. Pro will cost less and keep your files on your computer.</p>
+
+<section class="card" id="waitlist">
+<h2 class="mt0">Get early access to Pro</h2>
+<form class="waitlist" name="waitlist" method="POST" action="/rowbridge/thanks.html" data-waitlist novalidate>
+<input type="hidden" name="form-name" value="waitlist">
+<input type="hidden" name="source" value="">
+<p class="hidden-field" aria-hidden="true"><label>Leave this empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<div class="row">
+<div class="field"><label for="waitlist-email">Email</label><input type="email" id="waitlist-email" name="email" required autocomplete="email" placeholder="you@example.com"></div>
+<div class="field"><label for="waitlist-software">Which software do you import into?</label><select name="software" id="waitlist-software" required>
+<option value="">Choose…</option>
+<option>QuickBooks Desktop</option>
+<option>QuickBooks Online</option>
+<option>Quicken</option>
+<option>Other</option>
+</select></div>
+</div>
+<div class="field"><label for="waitlist-bank">Bank and country <span class="hint">(optional, helps us test your bank's format)</span></label><input type="text" id="waitlist-bank" name="bank_country" placeholder="e.g. Chase, USA"></div>
+<fieldset><legend>Which plan would you pick? <span class="hint">(optional)</span></legend>
+<div class="radios">
+<label><input type="radio" name="plan" value="monthly"> $9 / month</label>
+<label><input type="radio" name="plan" value="lifetime"> $49 once (lifetime)</label>
+<label><input type="radio" name="plan" value="free-only"> Free is enough</label>
+</div></fieldset>
+<button class="btn" type="submit">Get early access</button>
+<p class="form-error" role="alert" hidden></p>
+<p class="fine">We'll email you once when Pro is ready, plus at most a couple of product questions. No spam, unsubscribe any time. See <a href="/rowbridge/privacy.html">privacy</a>.</p>
+</form>
+</section>
+
+<section class="block faq">
+<h2>Pricing questions</h2>
+<details><summary>Can I buy Pro today?</summary><p>Not yet. We're checking whether enough people want it before we build checkout. Joining the waitlist is free and doesn't commit you to anything.</p></details>
+<details><summary>Is the free version limited in time?</summary><p>No. Files with up to 30 transactions convert in full, for free, as often as you like.</p></details>
+<details><summary>Will Pro need an account?</summary><p>It will need only a license tied to your email. Your statements will never be uploaded, on any plan.</p></details>
+</section>
+</div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Not affiliated with Intuit or Quicken Inc.</span>
+<nav aria-label="Footer"><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>
