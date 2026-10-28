@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en" data-base="/rowbridge/">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://script.google.com https://script.googleusercontent.com; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How to convert bank CSV to QBO for QuickBooks Desktop (Web Connect) | Rowbridge</title>
+<meta name="description" content="QuickBooks Desktop cannot import bank CSV files. Convert the CSV or Excel export to a .qbo Web Connect file in your browser and import it via File &gt; Utilities &gt; Import.">
+<link rel="canonical" href="https://andrenunesjob.github.io/rowbridge/guides/csv-to-qbo-quickbooks-desktop.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="How to convert bank CSV to QBO for QuickBooks Desktop (Web Connect) | Rowbridge">
+<meta property="og:description" content="QuickBooks Desktop cannot import bank CSV files. Convert the CSV or Excel export to a .qbo Web Connect file in your browser and import it via File &gt; Utilities &gt; Import.">
+<meta property="og:url" content="https://andrenunesjob.github.io/rowbridge/guides/csv-to-qbo-quickbooks-desktop.html">
+<meta name="theme-color" content="#0f766e">
+<link rel="icon" href="/rowbridge/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/rowbridge/assets/style.css">
+
+<!-- ===== ANALYTICS PLACEHOLDER =====
+     Analytics events (incl. pageview) go to the Apps Script web app (APPS_SCRIPT_URL in tools/build.py). To use a third-party tool instead,
+     paste ONE snippet here and add its origin to the CSP meta tag (CSP in build.py).
+     GoatCounter:  <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+     Cloudflare Web Analytics: <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "YOUR_TOKEN"}'></script>
+     Custom events (converted, limit_hit, pro_interest, pro_cta, waitlist_submit) are already wired via /assets/track.js
+     and are sent automatically once GoatCounter is present (Cloudflare Web Analytics has no custom events).
+     ===== END ANALYTICS PLACEHOLDER ===== -->
+<script src="/rowbridge/assets/config.js" defer></script>
+<script src="/rowbridge/assets/track.js" defer></script>
+</head>
+<body>
+<header class="site"><div class="wrap">
+<a class="logo" href="/rowbridge/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#0f766e"/><path d="M6 11h20M6 16h20M6 21h20" stroke="#99f6e4" stroke-width="2.4" stroke-linecap="round"/><path d="M5 25c4-7 18-7 22 0" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg><span>Rowbridge</span></a>
+<nav class="main" aria-label="Main"><a href="/rowbridge/">Converter</a>
+<a href="/rowbridge/pricing.html">Pricing</a>
+<a href="/rowbridge/guides/">Guides</a>
+<a href="/rowbridge/privacy.html">Privacy</a></nav>
+</div></header>
+<main>
+<div class="wrap narrow"><article class="prose">
+<h1>How to convert a bank CSV to QBO for QuickBooks Desktop</h1>
+<p>QuickBooks Desktop (Pro, Premier, Enterprise and Accountant) has no import for bank-statement CSV files. Its built-in way to bring in bank transactions is <strong>Web Connect</strong>: a .qbo file, which is an OFX file with an Intuit bank identifier added. If your bank only offers CSV or Excel, or you need older history than its download allows, convert the export to .qbo first.</p>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+<h2>1. Export the transactions from your bank</h2>
+<p>In online banking, open the account, choose the date range and download the transactions as <strong>CSV</strong> (sometimes labelled "Excel", "Spreadsheet" or "Comma delimited"). An .xlsx or .xls download works too. Avoid PDF: it has to be re-read and can introduce errors.</p>
+<h2>2. Convert it to .qbo</h2>
+<ol>
+<li>Open the <a href="/rowbridge/">converter</a> and drop the file in.</li>
+<li>Check the detected columns: <em>Date</em>, <em>Description</em>, and either one signed <em>Amount</em> column or separate <em>Debit</em>/<em>Credit</em> columns.</li>
+<li>Check the <strong>date format</strong>. 03/04/2026 means 4 March in the US and 3 April in most other countries. The preview shows the dates as YYYY-MM-DD so you can confirm.</li>
+<li>Choose <strong>QBO</strong>, pick the account type (checking, savings or credit card) and enter your account number. QuickBooks uses it to remember which account the file belongs to, so keep it the same every month.</li>
+<li>Download the .qbo file.</li>
+</ol>
+<h2>3. Import it into QuickBooks Desktop</h2>
+<ol>
+<li>Back up your company file first (File &rsaquo; Back Up Company), especially the first time.</li>
+<li>Go to <strong>File &rsaquo; Utilities &rsaquo; Import &rsaquo; Web Connect Files</strong> and pick the .qbo file. Double-clicking the file also works when QuickBooks is open.</li>
+<li>When asked, choose <strong>Use an existing QuickBooks account</strong> and pick the bank or card account.</li>
+<li>Open <strong>Banking &rsaquo; Bank Feeds &rsaquo; Bank Feeds Center</strong> and review and add the downloaded transactions.</li>
+</ol>
+<h2 id="bank-id">About the bank ID (INTU.BID)</h2>
+<p>Every .qbo file names a financial institution through an <code>INTU.BID</code> code. QuickBooks Desktop checks this code against Intuit's list of banks that support Web Connect. If the code isn't on the list, you'll see an error like <em>"QuickBooks is unable to verify the Financial Institution information for this download."</em></p>
+<p>The converter uses <code>3000</code> by default. Most converters use this code and QuickBooks generally accepts it. The code only labels the file. It doesn't connect to any bank, and your transactions land in whichever QuickBooks account you link the file to. If your version rejects it, try the code of another bank that supports Web Connect.</p>
+<h2>Common problems</h2>
+<ul>
+<li><strong>Dates are a month off, or some rows are missing.</strong> The date format was wrong. Switch between DD/MM and MM/DD and convert again.</li>
+<li><strong>Spending shows as deposits.</strong> Some exports, especially credit card ones, show charges as positive numbers. Tick <em>Flip signs</em>.</li>
+<li><strong>Payee names are cut off.</strong> Web Connect allows 32 characters for the payee name. The converter puts the full description in the memo.</li>
+<li><strong>Duplicates after importing twice.</strong> Use the same account number each time. The converter gives each transaction a stable ID, so QuickBooks can recognise ones it has already downloaded.</li>
+<li><strong>"This account is set up for Direct Connect / Bank Feeds."</strong> If the QuickBooks account is already connected to a bank feed under a different bank, deactivate the feed for that account (Edit Account &rsaquo; Bank Feed Settings) or import into a new account.</li>
+</ul>
+<div class="callout"><strong>Convert your file now:</strong> <a href="/rowbridge/">open the converter</a>. It runs in your browser, your statement is never uploaded, and it's free up to 30 transactions per file.</div>
+</article></div>
+</main>
+<footer class="site"><div class="wrap">
+<span>&copy; 2026 Rowbridge. Converts files on your device. Not affiliated with Intuit or Quicken Inc.</span>
+<nav aria-label="Footer"><a href="/rowbridge/guides/">Guides</a><a href="/rowbridge/pricing.html">Pricing</a><a href="/rowbridge/privacy.html">Privacy</a><a href="/rowbridge/terms.html">Terms</a></nav>
+</div></footer>
+</body>
+</html>
