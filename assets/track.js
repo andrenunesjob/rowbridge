@@ -24,7 +24,7 @@
     return fetch(url, { method: 'POST', mode: 'no-cors', keepalive: true, credentials: 'omit',
                         headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body });
   }
-  window.rbPost = post;   // shared with forms.js
+  window.rbPost = post;
   window.rbTrack = function (name, props) {
     try {
       var label = props && props.label ? ':' + String(props.label).replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40) : '';
@@ -36,7 +36,7 @@
   };
   // one pageview per page load
   window.rbTrack('pageview');
-  // declarative hooks: <a data-track="pricing_cta" data-track-label="lifetime">
+  // declarative hooks: <a data-track="buy_click" data-track-label="pricing">
   document.addEventListener('click', function (ev) {
     var el = ev.target.closest && ev.target.closest('[data-track]');
     if (el) window.rbTrack(el.getAttribute('data-track'), { label: el.getAttribute('data-track-label') || '' });
