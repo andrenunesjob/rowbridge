@@ -192,8 +192,8 @@
       ln.hidden = false;
       ln.innerHTML = '';
       ln.appendChild(el('p', null, 'This file has ' + txns.length + ' transactions. The free version converts the first ' + FREE_LIMIT +
-        ' (' + txns[0].iso + ' to ' + txns[FREE_LIMIT - 1].iso + '). Pro will convert any number of rows, batch files and remember your bank\'s layout.'));
-      var aLink = el('a', { href: '/pricing.html?from=limit#waitlist', class: 'btn small', 'data-track': 'pro_cta', 'data-track-label': 'limit' }, 'Get early access to Pro');
+        ' (' + txns[0].iso + ' to ' + txns[FREE_LIMIT - 1].iso + '). Rowbridge Offline converts any number of rows, converts several files at once, and remembers each bank layout. It runs on your computer, and nothing is uploaded.'));
+      var aLink = el('a', { href: 'https://oqen.gumroad.com/l/aqbswe', class: 'btn small', target: '_blank', rel: 'noopener', 'data-track': 'buy_click', 'data-track-label': 'limit' }, 'Buy Rowbridge Offline');
       ln.appendChild(aLink);
     } else ln.hidden = true;
     $('download').disabled = !txns.length;
@@ -273,7 +273,7 @@
     drop.addEventListener('drop', function (e) {
       var files = e.dataTransfer && e.dataTransfer.files;
       if (!files || !files.length) return;
-      if (files.length > 1) { status('Batch conversion of several files is a Pro feature. Converting the first file only.', 'info'); track('pro_interest', { label: 'batch-drop' }); }
+      if (files.length > 1) { status('Batch conversion is part of Rowbridge Offline. Converting the first file only.', 'info'); track('pro_interest', { label: 'batch-drop' }); }
       handleFile(files[0]);
     });
     // stop the browser from opening files dropped outside the zone
